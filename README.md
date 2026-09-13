@@ -18,10 +18,9 @@ Built around **Niri** with a focus on a clean, minimal and responsive desktop.
 | Bar | Waybar |
 | Terminal | Kitty |
 | Launcher | Fuzzel |
-| Notifications | Mako |
 | Shell | Bash / Zsh |
-| Font | YOUR FONT |
-| OS | NixOS |
+| Font | MONOSPACE |
+| OS | ARCH |
 
 
 
