@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-top": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-bottom": 1,
+    "spacing": 8,
+
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "tray"
+    ],
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": ""
+        }
+    },
+    "mpris": {
+        "player-icons": {
+            "default": "🎵"
+        },
+        "format": "⏸ {dynamic}",
+        "format-paused": "▶ {dynamic}",
+        "format-stopped": "⏹ Stopped",
+        "interval": 1,
+        "max-length": 40
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "󰥔 {:%R  󰃭 %A %d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "interval": 60
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "interval": 2
+    },
+    "memory": {
+        "format": "{}% ",
+        "interval": 5
+    },
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "  {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-muted": "X {volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+    },
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "pgrep fuzzel && pkill fuzzel || fuzzel",
+        "tooltip-format": "Launcher"
+    }
+}

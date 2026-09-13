@@ -1,0 +1,14 @@
+// 1. تشغيل daemon الخلفيات
+spawn-at-startup "awww-daemon"
+
+// 2. تطبيق الخلفية وتوليد الألوان بـ Pywal
+spawn-at-startup "sh" "-c" "awww img /home/mohammad/walls/calm/1.jpg && wal -i /home/mohammad/walls/calm/1.jpg -n"
+
+// 3. تشغيل Waybar
+spawn-at-startup "waybar"
+
+// 4. ضبط البيئة
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "~/.local/bin/start-pywal.sh"
+
